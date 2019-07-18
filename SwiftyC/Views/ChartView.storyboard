@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ChartVC-->
+        <scene sceneID="peB-HM-4zG">
+            <objects>
+                <viewController storyboardIdentifier="ChartVC" id="dHS-OR-ly5" customClass="ChartVC" customModule="SwiftyC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GdB-El-cn1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJf-uZ-Qhe" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="58" width="375" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k00-at-icu">
+                                <rect key="frame" x="0.0" y="30" width="375" height="29"/>
+                                <segments>
+                                    <segment title="42"/>
+                                    <segment title="Piscine C"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="dHS-OR-ly5" eventType="valueChanged" id="Qld-5f-rnR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SJf-uZ-Qhe" firstAttribute="leading" secondItem="xiy-Gb-l1G" secondAttribute="leading" id="2L3-Aa-7r5"/>
+                            <constraint firstItem="SJf-uZ-Qhe" firstAttribute="trailing" secondItem="xiy-Gb-l1G" secondAttribute="trailing" id="7Uu-tn-PQh"/>
+                            <constraint firstItem="k00-at-icu" firstAttribute="leading" secondItem="xiy-Gb-l1G" secondAttribute="leading" id="Bkz-gi-wA3"/>
+                            <constraint firstItem="SJf-uZ-Qhe" firstAttribute="top" secondItem="k00-at-icu" secondAttribute="bottom" id="MEI-qP-q5N"/>
+                            <constraint firstItem="xiy-Gb-l1G" firstAttribute="bottom" secondItem="SJf-uZ-Qhe" secondAttribute="bottom" constant="29" id="NjW-mN-do6"/>
+                            <constraint firstItem="xiy-Gb-l1G" firstAttribute="trailing" secondItem="k00-at-icu" secondAttribute="trailing" id="R8K-bZ-8rT"/>
+                            <constraint firstItem="xiy-Gb-l1G" firstAttribute="trailing" secondItem="SJf-uZ-Qhe" secondAttribute="trailing" id="SoV-XD-7nP"/>
+                            <constraint firstItem="k00-at-icu" firstAttribute="top" secondItem="xiy-Gb-l1G" secondAttribute="top" constant="10" id="Svf-lY-Lb8"/>
+                            <constraint firstItem="SJf-uZ-Qhe" firstAttribute="leading" secondItem="xiy-Gb-l1G" secondAttribute="leading" id="q7c-3Y-Xd5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xiy-Gb-l1G"/>
+                    </view>
+                    <connections>
+                        <outlet property="chart" destination="SJf-uZ-Qhe" id="DLk-ee-S99"/>
+                        <outlet property="segmentedControl" destination="k00-at-icu" id="37n-25-EMV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6n-a6-fme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="40.929535232383813"/>
+        </scene>
+    </scenes>
+</document>
