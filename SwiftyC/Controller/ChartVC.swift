@@ -94,7 +94,6 @@ class  ChartVC : UIViewController, ChartViewDelegate {
         chart.xAxis.valueFormatter = self
         xAxis.labelPosition = .bottom
 //        xAxis.valueFormatter
-        xAxis.labelTextColor = .blue
         xAxis.labelFont = .systemFont(ofSize: 5, weight: .light)
         xAxis.drawLabelsEnabled = true
 
@@ -118,15 +117,15 @@ class  ChartVC : UIViewController, ChartViewDelegate {
         chartDataSet.fillAlpha = 0.7
         chartDataSet.lineWidth = 2
         chartDataSet.drawHighlightCircleEnabled = true
-        //chartDataSet.setDrawHighlightIndicators(false)
+        chartDataSet.setDrawHighlightIndicators(false)
         
         
         let chartData = RadarChartData(dataSet: chartDataSet) //(xVals: dataPoints, dataSet: chartDataSet)
  
         
-        chartData.setValueFont(.systemFont(ofSize: 8, weight: .light))
+        chartData.setValueFont(.systemFont(ofSize: 12, weight: .light))
         //chartData.setDrawValues(false)
-        chartData.setValueTextColor(.white)
+        chartData.setValueTextColor(.black)
         
         
         chart.data = chartData
